@@ -7,11 +7,6 @@
 
   public class AppDbContext: IdentityDbContext<AppUser>
   {
-
-    /*public AppDbContext()
-    {
-    }
-*/
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
@@ -19,5 +14,12 @@
     public DbSet<Blog> Blogs { get; set; }
     public DbSet<Post> Posts { get; set; }
 
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+      base.OnModelCreating(builder);
+
+      builder.Entity<Post>().HasOne(p => p.User).WithMany(u => u.Posts).HasForeignKey(p => p.UserId)
+        .OnDelete(DeleteBehavior.Restrict);
+    }
   }
 }
