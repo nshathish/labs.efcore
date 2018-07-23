@@ -9,3 +9,13 @@
     * Microsoft.EntityFrameworkCore.Tools
     * Microsoft.Extension.Configuration.Json
     * Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
+    ### Running ef CLI commands
+    * if you are inside Labs.EfCore.Lesson1.DAL.Sql folder
+        `dotnet ef migrations add <migration-name> -o <output-folder-relative-to-current-folder>`
+    * if you are at the root of the project
+        `dotnet ef migrations add <migration-name> -o <output-folder-relative-to-project> -s Labs.EfCore.Lesson1.DAL.Sql -p Labs.EfCore.Lesson1.DAL.Sql`
+    * Update the database
+        `dotnet ef database update`
+    * if you make a mistake with migration, no option to force recreate it, but to remove the migration and add it again (will always remove the last migration)
+        `dotnet ef migrations remove`
