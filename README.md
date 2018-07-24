@@ -24,6 +24,7 @@
     
         `dotnet ef migrations remove`
         
-__efcore CLI commands__
-
+__efcore CLI commands__<br />
 http://www.entityframeworktutorial.net/efcore/cli-commands-for-ef-core-migration.aspx
+__gitignore creation__<br />
+https://www.gitignore.io/
