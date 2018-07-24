@@ -23,3 +23,6 @@
     * if you make a mistake with migration, no option to force recreate it, but to remove the migration and add it again (will always remove the last migration)
     
         `dotnet ef migrations remove`
+        
+__efcore CLI commands__
+http://www.entityframeworktutorial.net/efcore/cli-commands-for-ef-core-migration.aspx
